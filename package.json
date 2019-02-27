@@ -1,0 +1,11 @@
+{
+  "name": "demo",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {
+    "serverless": "^1.38.0"
+  },
+  "devDependencies": {
+    "serverless-rust": "^0.3.0"
+  }
+}

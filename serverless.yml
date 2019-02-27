@@ -1,0 +1,21 @@
+service: slack
+provider:
+  name: aws
+  runtime: rust
+plugins:
+  # this adds informs servleress to use
+  # the serverless-rust plugin
+  - serverless-rust
+    # creates one artifact for each function
+package:
+  individually: true
+functions:
+  # handler value syntax is `{cargo-package-name}.{bin-name}`
+  # or `{cargo-package-name}` for short when you are building a
+  # default bin for a given package.
+  panic:
+    handler: slack-bot-lambda
+    events:
+      - http:
+          path: /panic
+          method: POST
